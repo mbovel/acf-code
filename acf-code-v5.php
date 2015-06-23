@@ -87,7 +87,7 @@ class acf_field_code extends acf_field {
             'instructions'      => __('Language to use for highlighting.', 'acf-code'),
             'type'              => 'select',
             'name'              => 'language',
-            'choices'           => [
+            'choices'           => apply_filters( 'acf_code_languages', [
                 'abap'         => __('ABAP', 'acf-code'),
                 'abc'          => __('ABC', 'acf-code'),
                 'actionscript' => __('ActionScript', 'acf-code'),
@@ -210,7 +210,7 @@ class acf_field_code extends acf_field {
                 'xquery'       => __('XQuery', 'acf-code'),
                 'yaml'         => __('YAML', 'acf-code'),
                 'django'       => __('Django', 'acf-code'),
-            ],
+            ]),
         ]);
 
         acf_render_field_setting($field, [
